@@ -1,0 +1,36 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.ListRutaModel
+@{
+}
+ 
+<h1 align="center">LISTADO DE RUTAS</h1>
+<br>
+
+<table class="table table-bordered border-success">
+  <thead class="table-dark">
+    <td style="text-align:center">ID</td>
+    <td style="text-align:center">ORIGEN</td>
+    <td style="text-align:center">DESTINO</td>
+    <td style="text-align:center">TIEMPO_ESTIMADO</td>
+    <td style="text-align:center">ACCIONES</td>
+  </thead>
+    @foreach (var ruta in Model.Rutas)
+    {
+        <tr class="table-secondary">
+            <td style="text-align:center">@ruta.id</td>
+            <td style="text-align:center">@ruta.origen.nombre</td>
+            <td style="text-align:center">@ruta.destino.nombre</td>
+            <td style="text-align:center">@ruta.tiempo_estimado</td>
+            <td style="text-align:center">
+              <a class="btn btn-info" asp-page="./Details" asp-route-rutaId="@ruta.id"><i class="fas fa-adjust"></i>Ver</a>
+              &nbsp&nbsp
+              <a class="btn btn-info" asp-page="./Edit" asp-route-rutaId="@ruta.id">Editar</a>
+              <form method="POST">
+                <br>
+              <input type="number" class="form-control d-none" id="id" name="id" placeholder="id" asp-for="@ruta.id">
+                <button type="submit"class="btn btn-danger" href="">Eliminar</button>
+              </form>
+              </td>
+        </tr>
+    }
+</table>

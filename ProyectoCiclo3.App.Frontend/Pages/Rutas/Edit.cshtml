@@ -1,0 +1,68 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.EditRutaModel
+@{
+    var ruta = Model.Ruta;
+}
+<h1 align="center">EDITAR RUTAS</h1>
+<div class="text-center">
+  <form method="post">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        
+        <div class="col-6 col-md-auto col-lg-4">
+          <label for="Origen" class="form-label">Seleccione el origen:</label>
+          <select name="origen" class="form-control" >
+            <option value="">Selecciona el origen</option>
+            @foreach (var estacion in Model.Estaciones)
+            {
+              @if(@ruta.origen.id == @estacion.id){ 
+            <option value="@estacion.id" selected >@estacion.nombre</option>
+            }
+            else{
+              <option value="@estacion.id" >@estacion.nombre</option>
+            }
+            @* <option value="@estacion.id" >@estacion.nombre</option> *@
+            }
+          </select>
+
+        </div>
+
+        <div class="col-6 col-md-auto col-lg-4">
+          <label for="Destino" class="form-label">Seleccione el destino:</label>
+          <select name="destino" class="form-control" >
+            <option value="">Selecciona el destino</option>
+            @foreach (var estacion in Model.Estaciones)
+            {
+              @if(@ruta.destino.id == @estacion.id){ 
+            <option value="@estacion.id" selected>@estacion.nombre</option>
+            }
+            else{
+              <option value="@estacion.id">@estacion.nombre</option>
+            }
+              @* <option value="@estacion.id">@estacion.nombre</option> *@
+            }
+          </select>
+
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-4">
+          <label for="tiempo_estimado" class="form-label">Digite tiempo estimado:</label>
+          <input type="number" class="form-control" placeholder="Tiempo_estimado" name="tiempo_estimado" value="@ruta.tiempo_estimado" required>
+          @* <span class="number-danger" asp-validation-for="Ruta.tiempo_estimado"></span> *@
+        </div>
+        <div class="col-6 col-md-auto col-lg-4">
+          <label for="id" class="form-label d-none">Digite el ID:</label>
+          <input type="number" class="form-control d-none" id="id" name="id" value="@ruta.id" placeholder="Id">
+        </div>
+      </div>
+      <br>
+
+    </div>
+
+
+    <hr>
+    <button type="submit" class="btn btn-success" style="font-family: cursive;color:black">  &nbspEditar&nbsp  </button>
+
+
+  </form>
+</div>

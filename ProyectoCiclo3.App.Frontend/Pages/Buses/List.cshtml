@@ -1,0 +1,42 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.ListBusModel
+@{
+}
+
+
+<h1 align="center">LISTADO DE BUSES</h1>
+<br>
+
+<table class="table table-bordered border-success">
+  <thead class="table-dark">
+    <td style="text-align:center">ID</td>
+    <td style="text-align:center">MARCA</td>
+    <td style="text-align:center">MODELO</td>
+    <td style="text-align:center">KILOMETRAJE</td>
+    <td style="text-align:center">NRO ASIENTOS</td>
+    <td style="text-align:center">PLACA</td>
+    <td style="text-align:center">ACCIONES</td>
+  </thead>
+  @foreach (var bus in Model.Buses)
+  {
+    <tr class="table-secondary">
+      <td style="text-align:center">@bus.id</td>
+      <td style="text-align:center">@bus.marca</td>
+      <td style="text-align:center">@bus.modelo</td>
+      <td style="text-align:center">@bus.kilometraje</td>
+      <td style="text-align:center">@bus.numero_asientos</td>
+      <td style="text-align:center">@bus.placa</td>
+      <td  style="text-align:center">
+        <a class="btn btn-info" asp-page="./Details" asp-route-busId="@bus.id"><i class="fas fa-adjust"></i>Ver</a>
+        &nbsp&nbsp
+        <a class="btn btn-info" asp-page="./Edit" asp-route-busId="@bus.id">Editar</a>
+        
+        <form method="POST">
+          <br>
+            <input type="number" class="form-control d-none" id="id" name="id" placeholder="id" asp-for="@bus.id">
+            <button type="submit"class="btn btn-danger" href="">Eliminar</button>
+        </form>
+      </td>
+    </tr>
+  }
+</table>

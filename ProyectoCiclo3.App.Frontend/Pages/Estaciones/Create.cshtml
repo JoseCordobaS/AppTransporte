@@ -1,0 +1,64 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.FormEstacionModel
+@{
+}
+<h1 align="center">CREAR ESTACIONES</h1>
+<br>
+<div class="text-center">
+  <form method="POST">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <!-- <div class="col-6 col-md-auto col-lg-4">
+          <label for="Id" class="form-label">Digite el ID de la Estacion:</label>
+          <input type="number" class="form-control" id="id" name="id" placeholder="Id de la Estacion" required>
+        </div>  -->
+        <div class="col-6 col-md-auto col-lg-4">
+          <label for="Nombre" class="form-label">Digite el Nombre de la Estacion:</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de la Estacion" required>
+        </div>
+        <div class="col-6 col-md-auto col-lg-4">
+          <label for="Direccion" class="form-label">Digite la Direccion de la Estacion:</label>
+          <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion de la Estacion" required>
+        </div>
+        <div class="col-6 col-md-4 col-lg-4">
+          <label for="Coord_x" class="form-label">Digite la Coordenada X</label>
+          <input type="number" class="form-control" id="coord_x" name="coord_x" placeholder="Coordenada X de la Estacion" required>
+        </div>
+        <div class="col-6 col-md-4 col-lg-4">
+          <label for="Coord_y" class="form-label">Digite la Coordenada Y:</label>
+          <input type="number" class="form-control" id="coord_y" name="coord_y"placeholder="Coordenada X de la Estacion" required>
+        </div>
+        <div class="col-6 col-md-4 col-lg-4">
+          <label for="Tipo" class="form-label">Digite el Tipo de la Estacion:</label>
+          <input type="text" class="form-control" id="Tipo" name="Tipo" placeholder="Tipo de la Estacion" required>
+        </div>
+      </div>
+      <br>
+
+    </div>
+
+
+    <hr>
+    <button onclick="myFunction()" type="submit" class="btn btn-success" style="font-family: cursive;color:black">&nbspCREAR&nbsp </button>
+
+     <script>
+      function myFunction() {
+        let nombre = document.getElementById("nombre").value; 
+        let direccion = document.getElementById("direccion").value; 
+        let coord_x = document.getElementById("coord_x").value; 
+        let coord_y = document.getElementById("coord_y").value; 
+        let Tipo = document.getElementById("Tipo").value; 
+
+        if(nombre ==='' || direccion ==='' || coord_x ==='' || coord_y ===''||Tipo ==='')
+        {
+        alert("Debe llenar correctamente todos los campos");
+        }
+        else{
+          alert("SE HA CREADO CORRECTAMENTE LA ESTACIÓN");
+        } 
+        
+      }
+    </script>
+
+  </form>
+</div>

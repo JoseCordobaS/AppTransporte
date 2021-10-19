@@ -1,0 +1,46 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.EditEstacionModel
+@{
+    var estacion = Model.Estacion;
+}
+
+<div class="text-center">
+  <form method="post">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-6 col-md-auto col-lg-4">
+          <label for="id" class="form-label">Digite el ID:</label>
+          <input type="number" class="form-control" id="id" name="id" placeholder="Id" asp-for="@estacion.id" required readonly>
+        </div>
+        <div class="col-6 col-md-auto col-lg-4">
+          <label for="nombre" class="form-label">Digite el Nombre de la Estacion:</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" asp-for="@estacion.nombre" required>
+        </div>
+        <div class="col-6 col-md-auto col-lg-4">
+          <label for="direccion" class="form-label">Digite la Direccion:</label>
+          <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" asp-for="@estacion.direccion" required>
+        </div>
+        <div class="col-6 col-md-4 col-lg-4">
+          <label for="coord_x" class="form-label">Digite la Coordenada X:</label>
+          <input type="number" class="form-control" id="coord_x" name="coord_x" placeholder="Coordenada x" asp-for="@estacion.coord_x" required>
+        </div>
+        <div class="col-6 col-md-4 col-lg-4">
+          <label for="coord_y" class="form-label">Digite la Coordenada Y:</label>
+          <input type="number" class="form-control" id="coord_y" name="coord_y" placeholder="Coordenada y" asp-for="@estacion.coord_y" required>
+        </div>
+        <div class="col-6 col-md-4 col-lg-4">
+          <label for="Tipo" class="form-label">Digite el Tipo de Estacion:</label>
+          <input type="text" class="form-control" id="Tipo" name="Tipo" placeholder="Tipo" asp-for="@estacion.Tipo" required>
+        </div>
+      </div>
+      <br>
+
+    </div>
+
+
+    <hr>
+    <button type="submit" class="btn btn-success" style="font-family: cursive;color:black">  &nbspEDITAR&nbsp  </button>
+
+
+  </form>
+</div>

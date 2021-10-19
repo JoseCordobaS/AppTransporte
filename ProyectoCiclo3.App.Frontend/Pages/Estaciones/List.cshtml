@@ -1,0 +1,43 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.ListEstacionModel
+@{
+}
+ 
+
+<h1 align="center">LISTADO DE ESTACIONES</h1>
+<br>
+<table class="table table-bordered border-success">
+  <thead class="table-dark">
+    <td style="text-align:center">ID</td>
+    <td style="text-align:center">NOMBRE</td>
+    <td style="text-align:center">DIRECCION</td>
+    <td style="text-align:center">COORDENADA X</td>
+    <td style="text-align:center">COORDENADA Y</td>
+    <td style="text-align:center">TIPO</td>
+    <td style="text-align:center">ACCIONES</td>
+  </thead>
+    @foreach (var estacion in Model.Estaciones)
+    {
+        <tr class="table-secondary">
+            <td style="text-align:center">@estacion.id</td>
+            <td style="text-align:center">@estacion.nombre</td>
+            <td style="text-align:center">@estacion.direccion</td>
+            <td style="text-align:center">@estacion.coord_x</td>
+            <td style="text-align:center">@estacion.coord_y</td>
+            <td style="text-align:center">@estacion.Tipo</td>
+            <td style="text-align:center">
+              <a class="btn btn-info" asp-page="./Details" asp-route-estacionId="@estacion.id"><i class="fas fa-adjust"></i>Ver</a>
+              &nbsp&nbsp
+              <a class="btn btn-info" asp-page="./Edit" asp-route-estacionId="@estacion.id">Editar</a>
+            
+            <form method="POST">
+              <br>
+            <input type="number" class="form-control d-none" id="id" name="id" placeholder="id" asp-for="@estacion.id">
+            <button type="submit"class="btn btn-danger" href="">Eliminar</button>
+            </form>
+
+              
+              </td>
+        </tr>
+    }
+</table>

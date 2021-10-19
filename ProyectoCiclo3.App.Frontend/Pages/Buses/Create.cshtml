@@ -1,0 +1,65 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.FormBusModel
+@{
+}
+<h1 align="center">CREAR BUS</h1>
+<br>
+<div class="text-center">
+  <form method="POST">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        @* <div class="col-6 col-md-auto col-lg-4">
+          <label for="id" class="form-label">Digite el ID:</label>
+          <input type="text" class="form-control" id="id" name="id" placeholder="Id del bus">
+        </div> *@
+        <div class="col-6 col-md-auto col-lg-4">
+          <label for="marca" class="form-label">Digite la marca:</label>
+          <input type="text" class="form-control" id="marca" asp-for="Bus.marca" placeholder="Marca del bus">
+          <span class="text-danger" asp-validation-for="Bus.marca"></span>
+        </div>
+        <div class="col-6 col-md-auto col-lg-4">
+          <label for="modelo" class="form-label">Digite el modelo:</label>
+          <input type="number" class="form-control" id="modelo" asp-for="Bus.modelo" placeholder="Modelo del bus" required>
+        </div>
+        <div class="col-6 col-md-4 col-lg-4">
+          <label for="kilometraje" class="form-label">Digite el kilometraje</label>
+          <input type="number" class="form-control" id="kilometraje" asp-for="Bus.kilometraje" placeholder="kilometraje del bus" required>
+        </div>
+        <div class="col-6 col-md-4 col-lg-4">
+          <label for="numero_asientos" class="form-label">Digite el numero de asientos:</label>
+          <input type="number" class="form-control" id="numero_asientos" asp-for="Bus.numero_asientos" placeholder="# de asientos" required>
+        </div>
+        <div class="col-6 col-md-4 col-lg-4">
+          <label for="Placa" class="form-label">Digite la placa del bus:</label>
+          <input type="text" class="form-control" id="placa" asp-for="Bus.placa" placeholder="Placa del bus" required maxlength="6" minlength="6">
+        </div>
+      </div>
+      <br>
+
+    </div>
+
+
+    <hr>
+    <button onclick="myFunction()" type="submit" class="btn btn-success" style="font-family: cursive;color:black">&nbspCREAR&nbsp </button>
+
+    <script>
+      function myFunction() {
+        let marca = document.getElementById("marca").value; 
+        let modelo = document.getElementById("modelo").value; 
+        let kilometraje = document.getElementById("kilometraje").value; 
+        let numero_asientos = document.getElementById("numero_asientos").value; 
+        let placa = document.getElementById("placa").value; 
+
+        if(marca ==='' || modelo==='' || kilometraje==='' || numero_asientos===''|| placa.length<6){
+        alert("Debe llenar correctamente todos los campos correctamente");
+        }
+        else{
+          
+          alert("SE HA CREADO EL BUS");
+        } 
+        
+      }
+    </script>
+
+  </form>
+</div>

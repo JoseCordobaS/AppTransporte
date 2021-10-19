@@ -1,0 +1,63 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.FormRutasModel
+@{
+}
+@* definicion formulario crear rutas *@
+<h1 align="center">CREAR RUTAS</h1>
+<br>
+<div class="text-center">
+  <form method="post">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-6 col-md-auto col-lg-4">
+          <label for="origen" class="form-label">Seleccione el origen:</label>
+          @* <select asp-for="Ruta.origen" class="form-control">
+          <option value="">Selecciona el origen</option>
+          @foreach (var estacion in Model.Estaciones)
+          {
+              <option value="@estacion.id">@estacion.nombre @estacion.direccion - @estacion.coord_x - @estacion.coord_y - @estacion.Tipo</option>
+          }
+          </select> *@
+          <select name="origen" class="form-control" required>
+            <option value="">Selecciona el origen</option>
+            @foreach (var estacion in Model.Estaciones)
+            {
+              <option value="@estacion.id">@estacion.nombre</option>
+            }
+          </select>
+
+        </div>
+
+        <div class="col-6 col-md-auto col-lg-4">
+          <label for="destino" class="form-label">Seleccione el destino:</label>
+          @* <select asp-for="Ruta.destino" class="form-control">
+          <option value="">Selecciona el destino</option>
+          @foreach (var estacion in Model.Estaciones)
+          {
+              <option value="@estacion.id">@estacion.nombre @estacion.direccion - @estacion.coord_x - @estacion.coord_y - @estacion.Tipo</option>
+          }
+          </select> *@
+          <select name="destino" class="form-control" required>
+            <option value="">Selecciona el destino</option>
+            @foreach (var estacion in Model.Estaciones)
+            {
+              <option value="@estacion.id">@estacion.nombre</option>
+            }
+          </select>
+
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-4">
+          <label for="tiempo_estimado" class="form-label">Digite tiempo estimado:</label>
+          <input type="number" class="form-control" placeholder="Tiempo_estimado" name="tiempo_estimado" required>
+          @* <span class="number-danger" asp-validation-for="Ruta.tiempo_estimado"></span> *@
+        </div>
+      </div>
+      <br>
+    </div>
+
+    <hr>
+    <button type="submit" class="btn btn-success" style="font-family: cursive;color:black">  &nbspEnviar&nbsp  </button>
+
+  </form>
+</div>

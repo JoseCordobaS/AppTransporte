@@ -1,0 +1,23 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    @* <img src="\Images\logo.jpg" width="100px" /> *@
+    <img src="@Url.Content("~/Images/logo.jpg")" width="200px" /> 
+    @* <img src="\Images\logo.jpg" width="300px" /> *@
+    
+</div>
+
+<br>
+<div class="text-center">
+
+    <p>Proyecto aplicación de transporte creada en el ciclo 3 del programa misiónTic2022.</p>
+    <p>Permite la gestión de Buses, estaciones y rutas. Su persistencia se encuentra en </p>   
+    <p>una base de datos sqlserver almacenada en el servidor de Microsoft Azure</p>   
+
+    
+</div>
